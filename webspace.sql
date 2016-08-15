@@ -29,10 +29,11 @@ CREATE TABLE `user_files` (
   `user_id` int(11) NOT NULL,
   `dir_type` varchar(12) DEFAULT NULL,
   `parent_id` int(11) DEFAULT NULL,
+  `file_size` float DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_user_id` (`user_id`),
   CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +42,7 @@ CREATE TABLE `user_files` (
 
 LOCK TABLES `user_files` WRITE;
 /*!40000 ALTER TABLE `user_files` DISABLE KEYS */;
-INSERT INTO `user_files` VALUES (8,'grids.html','/var/www/html/websp/42-qasimkhokhar/grids.html',42,NULL,NULL),(9,'transcript_Jul30_2016_0832PM.htm','/var/www/html/websp/45-furqanharoon/transcript_Jul30_2016_0832PM.htm',45,NULL,NULL),(10,'Portal.rar','/var/www/html/websp/46-qasim/Portal.rar',46,NULL,NULL),(17,'FLIGHT SEARCH REQUIREMENTS.pdf','/var/www/html/websp/47-furqan/FLIGHT SEARCH REQUIREMENTS.pdf',47,NULL,NULL),(18,'Test folder','/var/www/html/websp/47-furqan/Test folder',47,'folder',NULL),(27,'second folder','/var/www/html/websp/47-furqan/Test folder/second folder',47,'folder',18);
+INSERT INTO `user_files` VALUES (48,'test folder','/var/www/html/websp/66-furqan/test folder',66,'folder',NULL,NULL),(49,'pogba.jpg','/var/www/html/websp/66-furqan/test folder/pogba.jpg',66,'file',48,NULL),(50,'manutd_cover.jpg','/var/www/html/websp/66-furqan/test folder/manutd_cover.jpg',66,'file',48,0),(51,'CWOWvg9U4AEptMn.jpg','/var/www/html/websp/66-furqan/test folder/CWOWvg9U4AEptMn.jpg',66,'file',48,0.026),(52,'chernobyl.jpg','/var/www/html/websp/66-furqan/chernobyl.jpg',66,NULL,NULL,0.093),(53,'captain_america.jpg','/var/www/html/websp/66-furqan/captain_america.jpg',66,NULL,NULL,0.128);
 /*!40000 ALTER TABLE `user_files` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +60,7 @@ CREATE TABLE `users` (
   `email` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s email, unique',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +69,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'fu','password','f@g.com'),(2,'fu1','password','f1@g.com'),(3,'furqan','123456','furqan@gmail.com'),(4,'furqan','123456','furqan1@gmail.com'),(5,'furqan','123456','furqan12@gmail.com'),(6,'furqan','123456','furqan123@gmail.com'),(7,'furqan','123456','furqan1234@gmail.com'),(8,'furqan','123456','furqan123774@gmail.com'),(9,'furqan','123456','furqan1237754@gmail.com'),(10,'furqan','123456','df1@g.com'),(11,'furqan','123456','df2@g.com'),(12,'furqan','123456','df3@g.com'),(13,'qasim','12345','qasim@xyz.com'),(14,'qasim','1234','qasim1@xyz.com'),(15,'abc','123','abc@email.com'),(16,'abcx','123','abcx@email.com'),(17,'','',''),(25,'furqan','123','asda2@sdfc.ocm'),(29,'furqan1','sdasdas','asd@gmail.com'),(33,'furqan','adasd','sadas.yah@com.com'),(35,'asd','asd','asdas@sdasd.com'),(37,'furqan','sadasd','sadasd@com.cm'),(42,'qasimkhokhar','1234','qasimkhokhar@ucp.edu.pk'),(43,'shahbaz.telecomeng','1234','shahbaz.telecomeng@gmail.com'),(45,'furqanharoon','1234','furqanharoon@ucp.edu.pk'),(46,'qasim','123','qa@ss.com'),(47,'furqan','123456','f12@g.com'),(48,'tst','123','f11@g.com');
+INSERT INTO `users` VALUES (66,'furqan','123','fnew@g.com');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -81,4 +82,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-15 10:10:34
+-- Dump completed on 2016-08-15 17:27:06
