@@ -1,4 +1,10 @@
 <!-- Form to upload file and send it to upload.php page when user will click on submit button -->
+<?php
+if(isset($_SESSION['size_exceed'])){
+  echo '<div class="alert alert-danger">Sorry you have reached your limit of 10 Mb</div>';
+  unset($_SESSION['size_exceed']);
+}
+?>   
   	<form action="upload.php" method="post" enctype="multipart/form-data">
 	    <input type="file" name="fileToUpload" id="fileToUpload">
 	    <input type="submit" value="Upload File" name="submit">

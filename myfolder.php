@@ -15,10 +15,10 @@
 	<body>
   <div class="container">
   	  	
-  	<?php include("includes/upload_form.html");//include form file to show upload form on top of page//?>  	
+  	<?php include("includes/upload_form.php");//include form file to show upload form on top of page//?>  	
   	<table class="table">
 			<thead>
-				<th>Id</th><th>File Name</th><th></th>
+				<th>Id</th><th>File Name</th><th>Action</th><th>File Size</th>
 			</thead>
 			<tbody>
 				<!-- In the loop below, all files of users are being displayed one by one in form of table row. We are displaying file ID, file name and button to delete file. if user will click on delete button then file will be deleted -->
@@ -32,10 +32,13 @@
 
 					}
 					else{
+						$fileSize = filesize($r->file_path);
+						$fileSizeInWords = formatSizeUnits($fileSize);
 						echo "<tr>
 							<td>$r->id</td>
 							<td>$r->file_name</td>
 							<td><a href='delete.php?id=$r->id' >delete</a></td>
+							<td>$fileSizeInWords</td>
 						</tr>";
 					}
 				}   ?>

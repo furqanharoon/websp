@@ -26,6 +26,6 @@ else{
 	$file_path = $_SESSION['user_path'].'/'.$_POST['folderName'];
 	$sql="INSERT INTO user_files(dir_type,file_name,file_path,user_id) values('".$dir_type."','".$_POST['folderName']."','".$file_path."','".$_SESSION['user_id']."')"; //Adding file entry in database with file name, file path and user-id 
 	$conn->query($sql);
-	// header("Location: file_manager.php"); //Redirecting to file_manager.php page
+	header("Location: file_manager.php"); //Redirecting to file_manager.php page
 }
 ?>

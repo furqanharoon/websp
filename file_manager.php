@@ -11,7 +11,7 @@ $result=$conn->query("select * from user_files where parent_id IS NULL and user_
 <body>
   <div class="container">
   	  	
-  	<?php include("includes/upload_form.html");//include form file to show upload form on top of page//?>  	
+  	<?php include("includes/upload_form.php");//include form file to show upload form on top of page//?>  	
   	<table class="table">
 			<thead>
 				<th>Id</th><th>File Name</th><th></th>
